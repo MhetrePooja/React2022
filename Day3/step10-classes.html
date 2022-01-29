@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes in ES6</title>
+    <script>
+        // ES6
+       /* class Hero{
+            constructor(){
+                this.firstName = "default first name";
+                this.lastname =" default last name";
+            }
+        }*/
+        //ES7
+        class Person{
+            age=0;
+            constructor(newage){
+                this.age=newage;
+            }
+        }
+        class Hero extends Person{
+            firstname = "default first name"; //public property
+            lastname = " default last name";  //public property
+            _secret = "My secret Mission"; // private property
+            static version = 1001; //static property
+
+            constructor(fname,lname,heroage){
+                super(heroage);
+                this.firstname = fname;
+                this.lastname = lname;  
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+            get secret(){
+                return this._secret;
+            }
+            set secret(newMission){
+                return this._secret= newMission;
+            }
+        }
+        let hero = new Hero ('Pooja','Mhetre',28);
+
+        console.log(hero.firstname);
+        console.log(hero.lastname);
+        console.log(hero.fullname());
+        console.log(hero.secret);
+        hero._secret="Save world";
+        console.log(hero.secret);
+        console.log(Hero.version); // to call static property use classname e.g Hero
+        console.log("pooja's age is " + hero.age); //age property is from inherited class
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

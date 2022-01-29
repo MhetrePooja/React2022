@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <script>
+        /*
+        var promise = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                if(true){
+                    resolve('resolved message');
+                }else{
+                    reject('rejected message');
+                }
+            },2000)
+        });
+        */
+       //fat arrow promises setTimeOut() is not appriciated for fat arrow
+        var promise = new Promise((resolve, reject)=> {     //resolve for success  and reject for failure
+            setTimeout(function() {
+                if(true){
+                    resolve('resolved message');
+                }else{
+                    reject('rejected message');
+                }
+            },2000)
+        });
+
+        promise
+        .then(function(res){        //res--resolve message
+            console.log(res);
+        }).catch(function(err){      //err--error message
+            console.log(err);
+
+        }).finally(function(){
+            console.log('Promise completed successfully')
+
+        })
+        
+       /*  promise
+        .then(function(res){
+            console.log(res);
+        },function(err){
+            console.log(err);
+        }) */
+
+       /*  
+       promise
+        .then(function(res){
+            console.log(res);
+            return res.toUpperCase();
+        })
+        .then(function(res){
+            console.log(res);
+            return res.toLowerCase();;
+        })
+        .then(function(res){
+            console.log(res);
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+        .finally(function(){
+            console.log("promise completed")
+        }) 
+        */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
